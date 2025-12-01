@@ -1,5 +1,5 @@
 from PEC_base import *
-from visualization import *
+from visualization import plot_cost_comparison, plot_survival_probability
 
 
 def get_pauli(pauli_string):
@@ -237,13 +237,13 @@ def subspace_total_PEC(n,k,p,std,L,key,stabilizer_strings):
 
 if __name__ == "__main__":
     key = jax.random.PRNGKey(0)
-    n = 6
+    n = 4
     std = 0
     
     stabilizer_string = ["X"*n, "Z"*n]
     k = n - len(stabilizer_string)
 
-    L_list = np.arange(1,3002,100, dtype=int)
+    L_list = np.arange(1,3002,1000, dtype=int)
     # p_list = jnp.linspace(0, 0.001, 10)
     # p_list = np.array([0.0001,0.001,0.01])
     p_list = np.array([0.0003])

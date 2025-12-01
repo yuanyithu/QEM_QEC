@@ -1,5 +1,5 @@
 from PEC_base import *
-from visualization import *
+import matplotlib.ticker as ticker
 from functools import partial
 
 @partial(jax.jit, static_argnames=('n'))
